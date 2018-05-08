@@ -1,0 +1,21 @@
+<div class="form-style-5">
+<form>
+<fieldset>
+<legend> Your Favorites </legend>
+<input type="submit" value="Refresh" (click)="getFavs()"/>
+</fieldset>
+</form>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let repo of resultsItems">
+      <div id="wraper">
+        <img id="listImg" src={{repo.owner.avatar_url}} />
+        <div id="details">
+        <h3>{{repo.name}}</h3>
+        <p>{{repo.owner.login}} {{repo.owner.id}}</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

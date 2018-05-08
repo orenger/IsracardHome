@@ -1,0 +1,25 @@
+<input id="bkmrkall" type="image" src="https://image.ibb.co/iJ1e17/bkmrkall.png" (click)="goToBookmarks()">
+<div class="form-style-5">
+<form>
+<fieldset>
+<legend> Search Repositories </legend>
+<input type="text" [(ngModel)]="keyword" name="field1" placeholder="Your keyword *">
+<h5 id="errMsg">{{errMsg}}  </h5>  
+</fieldset>
+<input type="submit" value="Search" (click)="searchRepos()"/>
+</form>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let repo of resultsItems">
+      <div id="wraper">
+        <img id="listImg" src={{repo.owner.avatar_url}} />
+        <div id="details">
+        <h3>{{repo.name}}</h3>
+        <p>{{repo.owner.login}} {{repo.owner.id}}</p>
+        <input id="bkmrk" type="image" src={{bkmrkurl}} (click)="addBookmark(repo)">
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
